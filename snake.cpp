@@ -97,3 +97,19 @@ void displayGrid(){
   SCREEN[foodRow][foodCol] = true;
 }
 
+// display game over
+void displayGameOver(){
+  //toggle all LEDS off
+  for(int i=0; i<screenSize; i++)
+    for(int j=0; j<screenSize; j++){
+      SCREEN[i][j] = false;
+    }
+
+  bool gameOverScreenG[6][6] = {//contains a G
+    {1, 1, 1, 1, 0, 0},
+    {1, 0, 0, 0, 0, 0},
+    {1, 0, 1, 1, 0, 0},
+    {1, 0, 0, 1, 0, 0},
+    {1, 0, 0, 1, 0, 0},
+    {1, 1, 1, 1, 0, 0}
+  };
