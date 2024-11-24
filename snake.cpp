@@ -113,3 +113,28 @@ void displayGameOver(){
     {1, 0, 0, 1, 0, 0},
     {1, 1, 1, 1, 0, 0}
   };
+
+bool gameOverScreenO[6][6] = {//contains a O
+    {0, 0, 1, 1, 1, 1},
+    {0, 0, 1, 0, 0, 1},
+    {0, 0, 1, 0, 0, 1},
+    {0, 0, 1, 0, 0, 1},
+    {0, 0, 1, 0, 0, 1},
+    {0, 0, 1, 1, 1, 1}
+  };
+
+  while(true){
+    for(int i=0; i<screenSize; i++){//write the G to the screen
+      for(int j=0; j<screenSize; j++){
+        SCREEN[i][j] = gameOverScreenG[i][j];
+      }
+    }
+    delay(500);
+    for(int i=0; i<screenSize; i++){//write the O to the screen
+      for(int j=0; j<screenSize; j++){
+        SCREEN[i][j] = gameOverScreenO[i][j];
+      }
+    }
+    delay(500);
+  }
+}
