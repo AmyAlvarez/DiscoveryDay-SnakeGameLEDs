@@ -72,17 +72,28 @@ bool checkCollision() {
   return false;
 }
 
-
-// check if position is part of the snake
-
-
-
-
-
+// spawn food
+void spawnFood(){
+  foodRow = random(0, screenSize);
+  foodCol = random(0, screenSize);
+}
 
 // display the grid
+void displayGrid(){
+  //toggle all LEDS off
+  for(int i=0; i<screenSize; i++)
+    for(int j=0; j<screenSize; j++){
+      SCREEN[i][j] = false;
+    }
 
+  // pull and disp the snake loc
+  for(int i=0; i<snakeLength; i++){
+    int sX = snake[i][0];//pull the x cord
+    int sY = snake[i][1];//pull the y cord
+    SCREEN[sX][sY] = true;
+  }
 
+  // pull and disp the food loc
+  SCREEN[foodRow][foodCol] = true;
+}
 
-
-// display game over
